@@ -1,0 +1,346 @@
+-- Create ScreenGui
+local screenGui = Instance.new("ScreenGui")
+screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+-- Create Frame
+local frame = Instance.new("Frame")
+frame.Size = UDim2.new(0, 315, 0, 465)
+frame.Position = UDim2.new(0.5, -150, 0.5, -150)
+frame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+frame.BorderSizePixel = 0
+frame.Active = true
+frame.Draggable = true
+frame.Parent = screenGui
+
+-- Create UICorner for rounded corners
+local uiCorner = Instance.new("UICorner")
+uiCorner.CornerRadius = UDim.new(0, 10)
+uiCorner.Parent = frame
+
+-- Create Title
+local titleLabel = Instance.new("TextLabel")
+titleLabel.Size = UDim2.new(0, 280, 0, 40)
+titleLabel.Position = UDim2.new(0, 10, 0, 10)
+titleLabel.BackgroundColor3 = Color3.fromRGB(0, 122, 204)
+titleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+titleLabel.Text = "BrookHaven GUI by ThatGodlyBacon"
+titleLabel.Font = Enum.Font.SourceSansBold
+titleLabel.TextSize = 20
+titleLabel.Parent = frame
+
+-- Create UICorner for rounded corners
+local titleCorner = Instance.new("UICorner")
+titleCorner.CornerRadius = UDim.new(0, 10)
+titleCorner.Parent = titleLabel
+
+-- Create Teleport Button
+local teleportButton = Instance.new("TextButton")
+teleportButton.Size = UDim2.new(0, 280, 0, 40)
+teleportButton.Position = UDim2.new(0, 10, 0, 240)
+teleportButton.BackgroundColor3 = Color3.fromRGB(0, 122, 204)
+teleportButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+teleportButton.Text = "Teleport"
+teleportButton.Font = Enum.Font.SourceSansBold
+teleportButton.TextSize = 18
+teleportButton.Parent = frame
+
+-- Create UICorner for rounded corners
+local teleportButtonCorner = Instance.new("UICorner")
+teleportButtonCorner.CornerRadius = UDim.new(0, 10)
+teleportButtonCorner.Parent = teleportButton
+
+-- Create Speed Button
+local speedButton = Instance.new("TextButton")
+speedButton.Size = UDim2.new(0, 280, 0, 40)
+speedButton.Position = UDim2.new(0, 10, 0, 190)
+speedButton.BackgroundColor3 = Color3.fromRGB(0, 122, 204)
+speedButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+speedButton.Text = "Change Speed"
+speedButton.Font = Enum.Font.SourceSansBold
+speedButton.TextSize = 18
+speedButton.Parent = frame
+
+-- Create UICorner for rounded corners
+local speedButtonCorner = Instance.new("UICorner")
+speedButtonCorner.CornerRadius = UDim.new(0, 10)
+speedButtonCorner.Parent = speedButton
+
+-- Create Black Hole Button
+local blackHoleButton = Instance.new("TextButton")
+blackHoleButton.Size = UDim2.new(0, 280, 0, 40)
+blackHoleButton.Position = UDim2.new(0, 10, 0, 140)
+blackHoleButton.BackgroundColor3 = Color3.fromRGB(0, 122, 204)
+blackHoleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+blackHoleButton.Text = "Activate Black Hole"
+blackHoleButton.Font = Enum.Font.SourceSansBold
+blackHoleButton.TextSize = 18
+blackHoleButton.Parent = frame
+
+-- Create UICorner for rounded corners
+local blackHoleButtonCorner = Instance.new("UICorner")
+blackHoleButtonCorner.CornerRadius = UDim.new(0, 10)
+blackHoleButtonCorner.Parent = blackHoleButton
+
+-- Create TextBoxes for coordinates and speed
+local xCoord = Instance.new("TextBox")
+xCoord.Size = UDim2.new(0, 90, 0, 30)
+xCoord.Position = UDim2.new(0, 10, 0, 60)
+xCoord.PlaceholderText = "X"
+xCoord.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+xCoord.TextColor3 = Color3.fromRGB(255, 255, 255)
+xCoord.Font = Enum.Font.SourceSans
+xCoord.TextSize = 18
+xCoord.Parent = frame
+
+local xCoordCorner = Instance.new("UICorner")
+xCoordCorner.CornerRadius = UDim.new(0, 10)
+xCoordCorner.Parent = xCoord
+
+local yCoord = Instance.new("TextBox")
+yCoord.Size = UDim2.new(0, 90, 0, 30)
+yCoord.Position = UDim2.new(0, 110, 0, 60)
+yCoord.PlaceholderText = "Y"
+yCoord.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+yCoord.TextColor3 = Color3.fromRGB(255, 255, 255)
+yCoord.Font = Enum.Font.SourceSans
+yCoord.TextSize = 18
+yCoord.Parent = frame
+
+local yCoordCorner = Instance.new("UICorner")
+yCoordCorner.CornerRadius = UDim.new(0, 10)
+yCoordCorner.Parent = yCoord
+
+local zCoord = Instance.new("TextBox")
+zCoord.Size = UDim2.new(0, 90, 0, 30)
+zCoord.Position = UDim2.new(0, 210, 0, 60)
+zCoord.PlaceholderText = "Z"
+zCoord.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+zCoord.TextColor3 = Color3.fromRGB(255, 255, 255)
+zCoord.Font = Enum.Font.SourceSans
+zCoord.TextSize = 18
+zCoord.Parent = frame
+
+local zCoordCorner = Instance.new("UICorner")
+zCoordCorner.CornerRadius = UDim.new(0, 10)
+zCoordCorner.Parent = zCoord
+
+local speedBox = Instance.new("TextBox")
+speedBox.Size = UDim2.new(0, 280, 0, 30)
+speedBox.Position = UDim2.new(0, 10, 0, 100)
+speedBox.PlaceholderText = "Speed"
+speedBox.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+speedBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+speedBox.Font = Enum.Font.SourceSans
+speedBox.TextSize = 18
+speedBox.Parent = frame
+
+local speedBoxCorner = Instance.new("UICorner")
+speedBoxCorner.CornerRadius = UDim.new(0, 10)
+speedBoxCorner.Parent = speedBox
+
+-- Function to teleport player to a specific location
+function teleportPlayer(player, x, y, z)
+    player.Character.HumanoidRootPart.CFrame = CFrame.new(x, y, z)
+end
+
+-- Function to change player speed
+function changeSpeed(player, speed)
+    player.Character.Humanoid.WalkSpeed = speed
+end
+
+-- Function to create a black hole effect
+function createBlackHole()
+    for _, part in pairs(workspace:GetDescendants()) do
+        if part:IsA("BasePart") and not part.Anchored then
+            part.CFrame = CFrame.new(0, 5, 0)
+        end
+    end
+end
+
+-- Example usage
+local player = game.Players.LocalPlayer
+
+-- Connect buttons to functions
+teleportButton.MouseButton1Click:Connect(function()
+    local x = tonumber(xCoord.Text) or 0
+    local y = tonumber(yCoord.Text) or 0
+    local z = tonumber(zCoord.Text) or 0
+    teleportPlayer(player, x, y, z)
+end)
+
+speedButton.MouseButton1Click:Connect(function()
+    local speed = tonumber(speedBox.Text) or 16
+    changeSpeed(player, speed)
+end)
+
+blackHoleButton.MouseButton1Click:Connect(function()
+    createBlackHole()
+end)
+
+-- Toggle GUI visibility
+local toggleButton = Instance.new("TextButton")
+toggleButton.Size = UDim2.new(0, 100, 0, 40)
+toggleButton.Position = UDim2.new(0, 10, 0, 10)
+toggleButton.BackgroundColor3 = Color3.fromRGB(0, 122, 204)
+toggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+toggleButton.Text = "Toggle GUI"
+toggleButton.Font = Enum.Font.SourceSansBold
+toggleButton.TextSize = 18
+toggleButton.Parent = screenGui
+
+local toggleButtonCorner = Instance.new("UICorner")
+toggleButtonCorner.CornerRadius = UDim.new(0, 10)
+toggleButtonCorner.Parent = toggleButton
+
+toggleButton.MouseButton1Click:Connect(function()
+    frame.Visible = not frame.Visible
+end)
+
+-- Create Infinite Yield Button
+local infiniteYieldButton = Instance.new("TextButton")
+infiniteYieldButton.Size = UDim2.new(0, 280, 0, 40)
+infiniteYieldButton.Position = UDim2.new(0, 10, 0, 290)
+infiniteYieldButton.BackgroundColor3 = Color3.fromRGB(0, 122, 204)
+infiniteYieldButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+infiniteYieldButton.Text = "Load Infinite Yield"
+infiniteYieldButton.Font = Enum.Font.SourceSansBold
+infiniteYieldButton.TextSize = 18
+infiniteYieldButton.Parent = frame
+
+-- Create UICorner for rounded corners
+local infiniteYieldButtonCorner = Instance.new("UICorner")
+infiniteYieldButtonCorner.CornerRadius = UDim.new(0, 10)
+infiniteYieldButtonCorner.Parent = infiniteYieldButton
+
+-- Function to load Infinite Yield
+local function loadInfiniteYield()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+end
+
+-- Connect button to function
+infiniteYieldButton.MouseButton1Click:Connect(loadInfiniteYield)
+
+-- Create Fly Toggle Button
+local flyButton = Instance.new("TextButton")
+flyButton.Size = UDim2.new(0, 280, 0, 40)
+flyButton.Position = UDim2.new(0, 10, 0, 340)
+flyButton.BackgroundColor3 = Color3.fromRGB(0, 122, 204)
+flyButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+flyButton.Text = "Toggle Fly"
+flyButton.Font = Enum.Font.SourceSansBold
+flyButton.TextSize = 18
+flyButton.Parent = frame
+
+-- Create UICorner for rounded corners
+local flyButtonCorner = Instance.new("UICorner")
+flyButtonCorner.CornerRadius = UDim.new(0, 10)
+flyButtonCorner.Parent = flyButton
+
+-- Function to toggle fly
+local flying = false
+local function toggleFly()
+    flying = not flying
+    local player = game.Players.LocalPlayer
+    local character = player.Character or player.CharacterAdded:Wait()
+    local humanoid = character:FindFirstChildOfClass("Humanoid")
+    
+    if flying then
+        humanoid.PlatformStand = true
+        local bodyVelocity = Instance.new("BodyVelocity")
+        bodyVelocity.Velocity = Vector3.new(0, 50, 0)
+        bodyVelocity.Parent = character.HumanoidRootPart
+    else
+        humanoid.PlatformStand = false
+        if character.HumanoidRootPart:FindFirstChild("BodyVelocity") then
+            character.HumanoidRootPart.BodyVelocity:Destroy()
+        end
+    end
+end
+
+-- Connect button to function
+flyButton.MouseButton1Click:Connect(toggleFly)
+
+-- Create Jump Power TextBox
+local jumpPowerBox = Instance.new("TextBox")
+jumpPowerBox.Size = UDim2.new(0, 180, 0, 30)
+jumpPowerBox.Position = UDim2.new(0, 10, 0, 390)
+jumpPowerBox.PlaceholderText = "Jump Power"
+jumpPowerBox.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+jumpPowerBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+jumpPowerBox.Font = Enum.Font.SourceSans
+jumpPowerBox.TextSize = 18
+jumpPowerBox.Parent = frame
+
+local jumpPowerBoxCorner = Instance.new("UICorner")
+jumpPowerBoxCorner.CornerRadius = UDim.new(0, 10)
+jumpPowerBoxCorner.Parent = jumpPowerBox
+
+-- Create Set Jump Power Button
+local setJumpPowerButton = Instance.new("TextButton")
+setJumpPowerButton.Size = UDim2.new(0, 90, 0, 30)
+setJumpPowerButton.Position = UDim2.new(0, 200, 0, 390)
+setJumpPowerButton.BackgroundColor3 = Color3.fromRGB(0, 122, 204)
+setJumpPowerButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+setJumpPowerButton.Text = "Set"
+setJumpPowerButton.Font = Enum.Font.SourceSansBold
+setJumpPowerButton.TextSize = 18
+setJumpPowerButton.Parent = frame
+
+local setJumpPowerButtonCorner = Instance.new("UICorner")
+setJumpPowerButtonCorner.CornerRadius = UDim.new(0, 10)
+setJumpPowerButtonCorner.Parent = setJumpPowerButton
+
+-- Function to set jump power
+local function setJumpPower()
+    local jumpPower = tonumber(jumpPowerBox.Text) or 50
+    local player = game.Players.LocalPlayer
+    local character = player.Character or player.CharacterAdded:Wait()
+    local humanoid = character:FindFirstChildOfClass("Humanoid")
+    humanoid.JumpPower = jumpPower
+end
+
+-- Connect button to function
+setJumpPowerButton.MouseButton1Click:Connect(setJumpPower)
+
+-- Create Noclip Button
+local noclipButton = Instance.new("TextButton")
+noclipButton.Size = UDim2.new(0, 280, 0, 40)
+noclipButton.Position = UDim2.new(0, 10, 0, 430)
+noclipButton.BackgroundColor3 = Color3.fromRGB(0, 122, 204)
+noclipButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+noclipButton.Text = "Toggle Noclip"
+noclipButton.Font = Enum.Font.SourceSansBold
+noclipButton.TextSize = 18
+noclipButton.Parent = frame
+
+-- Create UICorner for Noclip Button
+local noclipButtonCorner = Instance.new("UICorner")
+noclipButtonCorner.CornerRadius = UDim.new(0, 10)
+noclipButtonCorner.Parent = noclipButton
+
+-- Function to toggle noclip
+local noclip = false
+local function toggleNoclip()
+    noclip = not noclip
+    local character = player.Character
+    if noclip then
+        -- Enable noclip
+        for _, part in pairs(character:GetDescendants()) do
+            if part:IsA("BasePart") and part.CanCollide then
+                part.CanCollide = false
+            end
+        end
+    else
+        -- Disable noclip
+        for _, part in pairs(character:GetDescendants()) do
+            if part:IsA("BasePart") and not part.CanCollide then
+                part.CanCollide = true
+            end
+        end
+    end
+end
+
+-- Connect Noclip Button to toggle function
+noclipButton.MouseButton1Click:Connect(toggleNoclip)
+
+
